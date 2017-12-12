@@ -35,7 +35,7 @@ router.post('/', function(req, res, next) {
 	knex('assassins').insert({
 		full_name: req.body.full_name,
 		code_names: req.body.code_names,
-		// weapon:req.body.weapon,
+		weapon: req.body.weapon,
 		age: req.body.age,
 		price: req.body.price,
 		rating: req.body.rating,
@@ -48,5 +48,61 @@ router.post('/', function(req, res, next) {
 			next(err);
 		});
 });
+router.patch('/:id', function(req, res, next) {
+	knex('assassins')
+		.where('id', req.params.id)
+		.first()
+		.then(function(assassins) {
+			if (!assassins) {
+				return next();
+			}
+			return knex('assassins')
+				.update({
+					full_name: req.body.full_name,
+					code_names: req.body.code_names,
+					weapon: req.body.weapon,
+					age: req.body.age,
+					price: req.body.price,
+					rating: req.body.rating,
+					kills: req.body.kills
+				}, '*')
+				.where('id', req.params.id);
+		})
+		.then((assassins) => {
+			res.send(assassins[0]);
+		})
+		.catch((err) => {
+			next(err);
+
+		});
+});
+router.delete('/:id',function (req,res,next) {
+	let assassins;
+	knex('assassins')
+		.where('id',req.params.id)
+		.first()
+		.then(function (row) {
+			if (!row){
+				return next();
+			}
+			assassins = row;
+			return knex('assassins')
+				.del()
+				.where('id',req.params.id);
+		})
+		.then(function () {
+			delete assassins.id;
+			res.sedn(assassins);
+		})
+		.catch(function (err) {
+			next(err);
+		});
+});
+
+
+
+
+
+
 
 module.exports = router;
