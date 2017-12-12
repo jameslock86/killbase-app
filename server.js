@@ -1,22 +1,27 @@
 
 'use strict';
 
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 8000;
+let express = require('express');
+let app = express();
+let port = process.env.PORT || 8000;
 
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
-
-var assassinsRouter = require('./routes/assassins');
-
+let morgan = require('morgan');
+let bodyParser = require('body-parser');
+//route for assissins
+let assassinsRouter = require('./routes/assassins');
+//route for contracts
+let contractsRouter = require('./routes/contracts');
+// hides the factv we used express
 app.disable('x-powered-by');
 app.use(morgan('short'));
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-// app.use(bodyParser.multipart())
-app.use('/assassins', assassinsRouter);
 
+//allows us to call form the curl to each table
+app.use('/assassins', assassinsRouter);
+app.use('/contracts', contractsRouter);
 
 
 

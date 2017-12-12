@@ -3,28 +3,28 @@ let router = express.Router();
 let knexFile = require('../knexfile')['development'];
 let knex = require('knex')(knexFile);
 
-
+//route for the contracts all get:
 router.get('/', function(req, res) {
-	knex('assassins')
-		.then(function(assassins) {
+	knex('contracts')
+		.then(function(contracts) {
 			// return them to the client-side
-			res.send(assassins);
+			res.send(contracts);
 		})
 		.catch(function(error) {
 			res.sendStatus(500);
 		});
 });
 
-router.get('/:assassin_id', function(req, res) {
-	let id = req.params.assassin_id;
+router.get('/:contract_id', function(req, res) {
+	let id = req.params.contract_id;
 
 	if (Number.isNaN(parseInt(id))) {
 		res.sendStatus(404);
 	}
 
-	knex('assassins').where('id', id).first()
-		.then(function(assassin) {
-			res.send(assassin);
+	knex('contracts').where('id', id).first()
+		.then(function(contract) {
+			res.send(contract);
 		})
 		.catch(function(error) {
 			res.sendStatus(500);
@@ -32,44 +32,42 @@ router.get('/:assassin_id', function(req, res) {
 });
 
 router.post('/', function(req, res, next) {
-	knex('assassins').insert({
-		full_name: req.body.full_name,
-		code_names: req.body.code_names,
-		weapon: req.body.weapon,
-		age: req.body.age,
+	knex('contracts').insert({
+		client_id: req.body.client_id,
+		completed: req.body.completed,
+		completed_by: req.body.completed_by,
 		price: req.body.price,
-		rating: req.body.rating,
-		kills: req.body.kills
+		target_id: req.body.target_id
+
 	}, '*')
-		.then(function(assassins) {
-			res.send(assassins[0]);
+		.then(function(contracts) {
+			res.send(contracts[0]);
 		})
 		.catch((err) => {
 			next(err);
 		});
 });
 router.patch('/:id', function(req, res, next) {
-	knex('assassins')
+	knex('contracts')
 		.where('id', req.params.id)
 		.first()
-		.then(function(assassins) {
-			if (!assassins) {
+		.then(function(contracts) {
+			if (!contracts) {
 				return next();
 			}
-			return knex('assassins')
+			return knex('contracts')
 				.update({
-					full_name: req.body.full_name,
-					code_names: req.body.code_names,
-					weapon: req.body.weapon,
-					age: req.body.age,
+					client_id: req.body.client_id,
+					completed: req.body.completed,
+					completed_by: req.body.completed_by,
 					price: req.body.price,
-					rating: req.body.rating,
-					kills: req.body.kills
+					target_id: req.body.target_id
+
 				}, '*')
 				.where('id', req.params.id);
 		})
-		.then((assassins) => {
-			res.send(assassins[0]);
+		.then((contracts) => {
+			res.send(contracts[0]);
 		})
 		.catch((err) => {
 			next(err);
@@ -77,27 +75,28 @@ router.patch('/:id', function(req, res, next) {
 		});
 });
 router.delete('/:id',function (req,res,next) {
-	let assassins;
-	knex('assassins')
+	let contracts;
+	knex('contracts')
 		.where('id',req.params.id)
 		.first()
 		.then(function (row) {
 			if (!row){
 				return next();
 			}
-			assassins = row;
-			return knex('assassins')
+			contracts = row;
+			return knex('contracts')
 				.del()
 				.where('id',req.params.id);
 		})
 		.then(function () {
-			delete assassins.id;
-			res.send(assassins);
+			delete contracts.id;
+			res.send(contracts);
 		})
 		.catch(function (err) {
 			next(err);
 		});
 });
+
 
 
 
