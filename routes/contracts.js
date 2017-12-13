@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 	knex('contracts')
 		.then(function(contracts) {
 			// return them to the client-side
-			res.send(contracts);
+			res.render('contracts', {contracts});
 		})
 		.catch(function(error) {
 			res.sendStatus(500);

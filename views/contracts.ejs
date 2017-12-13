@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+		 <% include ./partials/header %>
+
+
+  </head>
+  <body>
+<% include navbar %>
+
+
+
+<section>
+
+<h1>Contracts_Table</h1>
+		<ul>
+			<% contracts.forEach(function (contracts) {%>
+				<li><%= contracts.price %></li>
+			<% }) %>
+		</ul
+</section>
+
+
+
+
+
+
+<p> this is my contracts page!!!!!</p>
+
+
+
+
+
+
+<section>
+<% include ./partials/footer %>
+</section>
+  </body>
+</html>

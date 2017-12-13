@@ -2,13 +2,14 @@ let express = require('express');
 let router = express.Router();
 let knexFile = require('../knexfile')['development'];
 let knex = require('knex')(knexFile);
+const app = require('express')();
 
-
+//get for assassins wit knex
 router.get('/', function(req, res) {
 	knex('assassins')
 		.then(function(assassins) {
 			// return them to the client-side
-			res.send(assassins);
+			res.render('assassins', {assassins});
 		})
 		.catch(function(error) {
 			res.sendStatus(500);
@@ -24,7 +25,7 @@ router.get('/:assassin_id', function(req, res) {
 
 	knex('assassins').where('id', id).first()
 		.then(function(assassin) {
-			res.send(assassin);
+			res.render(assassin);
 		})
 		.catch(function(error) {
 			res.sendStatus(500);
@@ -99,8 +100,10 @@ router.delete('/:id',function (req,res,next) {
 		});
 });
 
-
-
+//ejs home page post
+// router.get('/', function (req,res) {
+// 	res.render('index');
+// });
 
 
 
