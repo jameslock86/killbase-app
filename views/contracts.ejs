@@ -1,10 +1,13 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-		 <% include ./partials/header %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+     <% include ./partials/header %>
 
 
   </head>
@@ -21,15 +24,34 @@
 				<li><%= contracts.price %></li>
 			<% }) %>
 		</ul
-</section>
+<table>
 
 
 
+
+	<table
+	<tr>
+		<th>id</th><th>target_id</th><th>client_id</th><th>price</th><th>completed</th> <th>completed_by</th>
+	</tr>
+
+	<% for (var i = 0; i < contracts.length; i++) { %>
+		<tr>
+			<td><%= contracts[i].id %></td>
+			<td><%= contracts[i].target_id %></td>
+			<td><%= contracts[i].client_id %></td>
+			<td><%= contracts[i].price %></td>
+			<td><%= contracts[i].completed %></td>
+			<td><%= contracts[i].completed_by %></td>
+
+
+		</tr>
+	<% } %>
+</table>
 
 
 
 <p> this is my contracts page!!!!!</p>
-
+</section>
 
 
 

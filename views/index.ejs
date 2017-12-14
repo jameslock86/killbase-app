@@ -16,12 +16,26 @@
 
 <h1><%='⚔️ killbase2.0'%></h1>
   <p>this is some information.</p>
+	<form action="/action_page.php">
+	assassins:<input type="text" ><br>
+	<button type="submit" formaction="/assassins">
+	Submit
+	</button>
+</form>
+
+	<form action="/action_page.php">
+	contracts:<input type="text" ><br>
+	<button type="submit" formaction="/contracts">
+	Submit
+	</button>
+
+</form>
+
+
+
 	<!-- buttons that will send you to the next page  like links ass. con.-->
 	<a href="/assassins"><button>Assassins</button></a>
 	<a href="/contracts"><button>Contracts</button></a>
-
-	<a href="/assassins"><button>Assassins_id</button></a>
-	<a href="/contracts"><button>Contracts_id</button></a>
 <div>
        <% include ./partials/footer %>
 </div>
