@@ -41,7 +41,7 @@ router.post('/', function(req, res, next) {
 
 	}, '*')
 		.then(function(contracts) {
-			res.send(contracts[0]);
+			res.render(contracts[0]);
 		})
 		.catch((err) => {
 			next(err);

@@ -43,7 +43,7 @@ router.post('/', function(req, res, next) {
 		kills: req.body.kills
 	}, '*')
 		.then(function(assassins) {
-			res.send(assassins[0]);
+			res.render(assassins[0]);
 		})
 		.catch((err) => {
 			next(err);

@@ -11,18 +11,20 @@
 
   </head>
   <body>
-<% include navbar %>
+<% include ./partials/navbar %>
 <section>
 
 
 
-<h1>Assssins_Table</h1>
-		<ul>
+<h1>⚔️ Assssins_Table</h1>
+<table >
+<tr>full_name</tr>
+		<tr>
 			<% assassins.forEach(function (assassin) {%>
 				<li><%= assassin.full_name%></li>
 			<% }) %>
-		</ul>
-
+		</tr>
+</table>
 
 				<table class = "assassins_display_table">
 				  <tr>
@@ -43,7 +45,7 @@
 
 				    </tr>
 				  <% } %>
-				</table>
+				 </table>
 
 
 

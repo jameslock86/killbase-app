@@ -12,18 +12,22 @@
 
   </head>
   <body>
-<% include navbar %>
+<% include ./partials/navbar %>
 
 
 
 <section>
 
-<h1>Contracts_Table</h1>
-		<ul>
+<h1>⚔️ Contracts_Table</h1>
+
+
+<table >
+<tr>price</tr>
+		<tr>
 			<% contracts.forEach(function (contracts) {%>
 				<li><%= contracts.price %></li>
 			<% }) %>
-		</ul
+		</tr>
 <table>
 
 
