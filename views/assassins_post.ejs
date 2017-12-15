@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+     <% include ./partials/header %>
+
+
+  </head>
+<body>
+	<% include ./partials/navbar %>
+
+
+	<h1> assassins_post </h1>
+
+
+	    <form name="form1" method="POST" action="/assassins_post/add">
+	    <table>
+	        <tr> <td>full_name</td><td><input type="text" name="full_name"></td> </tr>
+
+	        <tr> <td>code_names</td>
+	        <td><input type="text" name="code_names" ></td> </tr>
+
+					<tr> <td>weapon</td>
+					<td><input type="text" name="weapon" ></td>
+					 </tr>
+
+					<tr>
+	         <td>contact_info</td>
+	        <td><input type="text" name="contact_info" ></td>
+	        </tr>
+
+					<tr>
+	        <td>age</td>
+	        <td><input type="text" name="age" ></td>
+	        </tr>
+
+					<tr>
+					<td>price</td>
+					<td><input type="text" name="price" ></td>
+					</tr>
+
+					<tr>
+					<td>rating</td>
+					<td><input type="text" name="rating" ></td>
+					</tr>
+
+					<tr>
+	        <td>kills</td>
+	        <td><input type="text" name="kills" ></td>
+	        </tr>
+
+					<tr>
+	        <td colspan="2">  <button type="submit" formaction="/assassins/" formmethod="post">Submit using POST</button>
+					</td> </tr>
+
+
+	    </table>
+
+	    </form>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+			 <% include ./partials/footer %>
+</div>
+
+
+</section>
+</body>
+</html>

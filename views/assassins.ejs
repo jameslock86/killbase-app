@@ -28,7 +28,7 @@
 
 				<table class = "assassins_display_table">
 				  <tr>
-				    <th>id</th><th>Name</th><th>code_names</th><th>weapon</th><th>contact_info</th> <th>age</th> <th>rating</th> <th>kills</th>
+				    <th>id</th><th>Name</th><th>code_names</th><th>weapon</th><th>contact_info</th> <th>age</th> <th>rating</th><th>price</th> <th>kills</th>
 				  </tr>
 
 				  <% for (var i = 0; i < assassins.length; i++) { %>
@@ -39,6 +39,7 @@
 							<td><%= assassins[i].weapon %></td>
 							<td><%= assassins[i].contact_info %></td>
 							<td><%= assassins[i].age %></td>
+							<td><%= assassins[i].price %></td>
 							<td><%= assassins[i].rating %></td>
 							<td><%= assassins[i].kills %></td>
 

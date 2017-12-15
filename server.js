@@ -4,7 +4,7 @@
 let express = require('express');
 let app = express();
 let port = process.env.PORT || 8000;
-
+const ejslint = require('ejs-lint');
 let morgan = require('morgan');
 let bodyParser = require('body-parser');
 //route for assissins
@@ -15,23 +15,23 @@ let contractsRouter = require('./routes/contracts');
 app.disable('x-powered-by');
 app.use(morgan('short'));
 // lookinto the folder for my views.
+
 app.set('views','./views');
 //ejs view engine
 app.set('view engine','ejs');
 
 
 app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded());
+
 //allows us to call form the curl to each table
 app.use('/assassins', assassinsRouter);
 app.use('/contracts', contractsRouter);
 
+//makes my calls to the assassin,contracts pages
 app.use('/',function (req,res) {
 	res.render('index');
 });
 
-
-	
 
 
 

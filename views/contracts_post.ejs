@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+     <% include ./partials/header %>
+
+
+  </head>
+<body>
+	<% include ./partials/navbar %>
+
+
+	<h1> contracts_post </h1>
+
+
+	    <form name="form1" method="POST" action="/contracts_post/add">
+	    <table>
+	        <tr> <td>id</td><td><input type="text" name="id"></td> </tr>
+
+	        <tr> <td>target_id</td>
+	        <td><input type="text" name="target_id" ></td> </tr>
+
+					<tr> <td>client_id</td>
+					<td><input type="text" name="client_id" ></td>
+					 </tr>
+
+					<tr>
+	         <td>price</td>
+	        <td><input type="text" name="price" ></td>
+	        </tr>
+
+					<tr>
+	        <td>completed</td>
+	        <td><input type="text" name="completed" ></td>
+	        </tr>
+
+					<tr>
+					<td>completed_by</td>
+					<td><input type="text" name="completed_by" ></td>
+					</tr>
+
+
+					<tr>
+	        <td colspan="2">  <button type="submit" formaction="contracts/" formmethod="post">Submit using POST</button>
+					</td> </tr>
+
+
+	    </table>
+
+	    </form>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+			 <% include ./partials/footer %>
+</div>
+
+
+</section>
+</body>
+</html>
