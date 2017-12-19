@@ -21,8 +21,14 @@ app.set('views','./views');
 app.set('view engine','ejs');
 
 
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+// allows the use of changing the methods to post or delete from post
+let methodOverride = require('method-override');
+
+// _method.... possible var for down bellow
+app.use(methodOverride('_method'));
 //allows us to call form the curl to each table
 app.use('/assassins', assassinsRouter);
 app.use('/contracts', contractsRouter);

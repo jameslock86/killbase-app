@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<% include ./partials/header %>
+
+</head>
+
+<body>
+	<% include ./partials/navbar %>
+
+
+		<h1>contracts_delete</h1>
+
+		<form method="POST" action=<%= `${id}?_method=DELETE`%>>
+
+
+				<table>
+					<tr>
+						<td>id</td>
+						<td><input type="number" name="id" value=""></td>
+					</tr>
+
+
+					<tr>
+						<td colspan="2"> <button type="submit">delete</button>
+						</td>
+					</tr>
+
+				</table>
+			</a>
+		</form>

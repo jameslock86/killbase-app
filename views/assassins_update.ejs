@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+     <% include ./partials/header %>
+
+
+  </head>
+<body>
+	<% include ./partials/navbar %>
+
+<h1>assassins_update</h1>
+
+<form  name="Assassins"  action="/assassins/<%= id%>/?_method=PUT" method="POST">
+	<table>
+		<tr> <td>id</td>
+			<td><label name="id" value="<%= id %>
+"></label></td> </tr>
+
+			<tr> <td>full_name</td>
+				<td><input type="text" name="full_name" value="<%= full_name %>"></td> </tr>
+
+			<tr> <td>code_names</td>
+			<td><input type="text" name="code_names" value="<%= code_names %>" ></td> </tr>
+
+			<tr> <td>weapon</td>
+			<td><input type="text" name="weapon" value="<%= weapon %>"></td>
+			 </tr>
+
+			<tr>
+			 <td>contact_info</td>
+			<td><input type="text" name="contact_info" value="<%= contact_info %>"></td>
+			</tr>
+
+			<tr>
+			<td>age</td>
+			<td><input type="number" name="age" value="<%= age %>"></td>
+			</tr>
+
+			<tr>
+			<td>price</td>
+			<td><input type="number" name="price"value="<%= price %>" ></td>
+			</tr>
+
+			<tr>
+			<td>rating</td>
+			<td><input type="number" name="rating" value="<%= rating %>" ></td>
+			</tr>
+
+			<tr>
+			<td>kills</td>
+			<td><input type="number" name="kills" value="<%= kills %>"></td>
+			</tr>
+
+			<tr>
+			<td colspan="2"> <button type="submit">Submit</button>
+			</td> </tr>
+
+	</table>
+
+</div>
+</div>
+</form>
+
+
+
+<div>
+			 <% include ./partials/footer %>
+</div>
+
+
+</section>
+</body>
+</html>

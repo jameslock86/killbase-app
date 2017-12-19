@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<% include ./partials/header %>
+
+</head>
+
+<body>
+	<% include ./partials/navbar %>
+
+
+		<h1>contracts_update</h1>
+<form  name="Contracts"  action="/contracts/<%= id%>/?_method=PUT" method="POST">
+
+
+
+	<table>
+			<tr> <td>id</td><td><input type="text" name="id" value="<%= id %>"></td> </tr>
+
+			<tr> <td>target_id</td>
+			<td><input type="number" name="target_id" value="<%= target_id %>"></td> </tr>
+
+			<tr> <td>client_id</td>
+			<td><input type="number" name="client_id" value="<%= client_id %>"></td>
+			 </tr>
+
+			<tr>
+			 <td>price</td>
+			<td><input type="number" name="price" value="<%= price %>"></td>
+			</tr>
+
+			<tr>
+			<td>completed</td>
+			<td><input type="number" name="completed" value="<%= completed %>"></td>
+			</tr>
+
+			<tr>
+			<td>completed_by</td>
+			<td><input type="text" name="completed_by" value="<%= completed_by %>"></td>
+			</tr>
+
+			<tr>
+			<td colspan="2">  <button type="submit">Submit</button>
+			</td> </tr>
+
+
+	</table>
+			</a>
+		</form>
+
+
+
+
+
+
+
+		<div>
+			<% include ./partials/footer %>
+		</div>
+
+
+		</section>
+</body>
+
+</html>

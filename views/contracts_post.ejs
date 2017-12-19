@@ -17,20 +17,20 @@
 	<h1> contracts_post </h1>
 
 
-	    <form name="form1" method="POST" action="/contracts_post/add">
+	    <form name="contracts" method="POST" action="/contracts">
 	    <table>
 	        <tr> <td>id</td><td><input type="text" name="id"></td> </tr>
 
 	        <tr> <td>target_id</td>
-	        <td><input type="text" name="target_id" ></td> </tr>
+	        <td><input type="number" name="target_id" ></td> </tr>
 
 					<tr> <td>client_id</td>
-					<td><input type="text" name="client_id" ></td>
+					<td><input type="number" name="client_id" ></td>
 					 </tr>
 
 					<tr>
 	         <td>price</td>
-	        <td><input type="text" name="price" ></td>
+	        <td><input type="number" name="price" ></td>
 	        </tr>
 
 					<tr>
@@ -43,9 +43,8 @@
 					<td><input type="text" name="completed_by" ></td>
 					</tr>
 
-
 					<tr>
-	        <td colspan="2">  <button type="submit" formaction="contracts/" formmethod="post">Submit using POST</button>
+	        <td colspan="2">  <button type="submit">Submit</button>
 					</td> </tr>
 
 

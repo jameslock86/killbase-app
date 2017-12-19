@@ -17,46 +17,46 @@
 	<h1> assassins_post </h1>
 
 
-	    <form name="form1" method="POST" action="/assassins_post/add">
+	    <form name="Assassins" method="POST" action="/assassins">
 	    <table>
-	        <tr> <td>full_name</td><td><input type="text" name="full_name"></td> </tr>
+	        <tr> <td>full_name</td>
+						<td><input type="text" name="full_name" value=""></td> </tr>
 
 	        <tr> <td>code_names</td>
-	        <td><input type="text" name="code_names" ></td> </tr>
+	        <td><input type="text" name="code_names" value="" ></td> </tr>
 
 					<tr> <td>weapon</td>
-					<td><input type="text" name="weapon" ></td>
+					<td><input type="text" name="weapon" value=""></td>
 					 </tr>
 
 					<tr>
 	         <td>contact_info</td>
-	        <td><input type="text" name="contact_info" ></td>
+	        <td><input type="text" name="contact_info" value=""></td>
 	        </tr>
 
 					<tr>
 	        <td>age</td>
-	        <td><input type="text" name="age" ></td>
+	        <td><input type="number" name="age" value=""></td>
 	        </tr>
 
 					<tr>
 					<td>price</td>
-					<td><input type="text" name="price" ></td>
+					<td><input type="number" name="price"value="" ></td>
 					</tr>
 
 					<tr>
 					<td>rating</td>
-					<td><input type="text" name="rating" ></td>
+					<td><input type="number" name="rating" value="" ></td>
 					</tr>
 
 					<tr>
 	        <td>kills</td>
-	        <td><input type="text" name="kills" ></td>
+	        <td><input type="number" name="kills" value=""></td>
 	        </tr>
 
 					<tr>
-	        <td colspan="2">  <button type="submit" formaction="/assassins/" formmethod="post">Submit using POST</button>
+	        <td colspan="2"> <button type="submit">Submit</button>
 					</td> </tr>
-
 
 	    </table>
 

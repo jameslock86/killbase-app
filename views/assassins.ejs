@@ -1,63 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
 
-     <% include ./partials/header %>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
 
-
-  </head>
-  <body>
-<% include ./partials/navbar %>
-<section>
+	<% include ./partials/header %>
 
 
+</head>
 
-<h1>⚔️ Assssins_Table</h1>
-<table >
+<body>
+	<% include ./partials/navbar %>
+		<section>
+
+
+
+			<h1>⚔️ Assssins_Table</h1>
+			<!-- <table >
 <tr>full_name</tr>
 		<tr>
 			<% assassins.forEach(function (assassin) {%>
 				<li><%= assassin.full_name%></li>
 			<% }) %>
 		</tr>
-</table>
+</table> -->
 
-				<table class = "assassins_display_table">
-				  <tr>
-				    <th>id</th><th>Name</th><th>code_names</th><th>weapon</th><th>contact_info</th> <th>age</th> <th>rating</th><th>price</th> <th>kills</th>
-				  </tr>
+			<table class="assassins_display_table">
+				<tr>
+					<th>id</th>
+					<th>Name</th>
+					<th>code_names</th>
+					<th>weapon</th>
+					<th>contact_info</th>
+					<th>age</th>
+					<th>rating</th>
+					<th>price</th>
+					<th>kills</th>
+					<th>edit</th>
+					<th>delete</th>
 
-				  <% for (var i = 0; i < assassins.length; i++) { %>
-				    <tr>
-				      <td><%= assassins[i].id %></td>
-				      <td><%= assassins[i].full_name %></td>
-							<td><%= assassins[i].code_names %></td>
-							<td><%= assassins[i].weapon %></td>
-							<td><%= assassins[i].contact_info %></td>
-							<td><%= assassins[i].age %></td>
-							<td><%= assassins[i].price %></td>
-							<td><%= assassins[i].rating %></td>
-							<td><%= assassins[i].kills %></td>
+				</tr>
+
+				<% for (var i = 0; i < assassins.length; i++) { %>
+					<tr>
+						<td>
+							<%= assassins[i].id %>
+						</td>
+						<td>
+							<%= assassins[i].full_name %>
+						</td>
+						<td>
+							<%= assassins[i].code_names %>
+						</td>
+						<td>
+							<%= assassins[i].weapon %>
+						</td>
+						<td>
+							<%= assassins[i].contact_info %>
+						</td>
+						<td>
+							<%= assassins[i].age %>
+						</td>
+						<td>
+							<%= assassins[i].price %>
+						</td>
+						<td>
+							<%= assassins[i].rating %>
+						</td>
+						<td>
+							<%= assassins[i].kills %>
+						</td>
+						<td><a href="/assassins/<%= assassins[i].id %>/update"><button>EDIT</button></a>
+						</td </tr>
+
+						<td><a href="/assassins/<%= assassins[i].id %>/delete"><button>delete</button></a>
+						</td </tr>
+						<% } %>
+			</table>
 
 
-				    </tr>
-				  <% } %>
-				 </table>
 
 
 
 
-
-
-		<div>
-		       <% include ./partials/footer %>
-		</div>
+			<div>
+				<% include ./partials/footer %>
+			</div>
 
 
 		</section>
-  </body>
+</body>
+
 </html>

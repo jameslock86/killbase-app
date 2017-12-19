@@ -1,68 +1,94 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
 
-     <% include ./partials/header %>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
 
-
-  </head>
-  <body>
-<% include ./partials/navbar %>
+	<% include ./partials/header %>
 
 
+</head>
 
-<section>
+<body>
+	<% include ./partials/navbar %>
 
-<h1>⚔️ Contracts_Table</h1>
 
 
-<table >
+		<section>
+
+			<h1>⚔️ Contracts_Table</h1>
+
+
+			<!-- <table >
 <tr>price</tr>
 		<tr>
 			<% contracts.forEach(function (contracts) {%>
 				<li><%= contracts.price %></li>
 			<% }) %>
 		</tr>
-<table>
+</table> -->
 
 
 
 
-	<table
-	<tr>
-		<th>id</th><th>target_id</th><th>client_id</th><th>price</th><th>completed</th> <th>completed_by</th>
-	</tr>
+			<table <tr>
+				<th>id</th>
+				<th>target_id</th>
+				<th>client_id</th>
+				<th>price</th>
+				<th>completed</th>
+				<th>completed_by</th>
+				<th>edit</th>
+				<th>delete</th>
+				</tr>
 
-	<% for (var i = 0; i < contracts.length; i++) { %>
-		<tr>
-			<td><%= contracts[i].id %></td>
-			<td><%= contracts[i].target_id %></td>
-			<td><%= contracts[i].client_id %></td>
-			<td><%= contracts[i].price %></td>
-			<td><%= contracts[i].completed %></td>
-			<td><%= contracts[i].completed_by %></td>
+				<% for (var i = 0; i < contracts.length; i++) { %>
+					<tr>
+						<td>
+							<%= contracts[i].id %>
+						</td>
+						<td>
+							<%= contracts[i].target_id %>
+						</td>
+						<td>
+							<%= contracts[i].client_id %>
+						</td>
+						<td>
+							<%= contracts[i].price %>
+						</td>
+						<td>
+							<%= contracts[i].completed %>
+						</td>
+						<td>
+							<%= contracts[i].completed_by %>
+						</td>
+
+						<td><a href="/contracts/<%= contracts[i].id %>/update"><button>EDIT</button></a>
+
+						</td </tr>
+
+						<td><a href="/contracts/<%= contracts[i].id %>/delete"><button>delete</button></a>
+
+						</td </tr>
+						<% } %>
+						</table>
 
 
-		</tr>
-	<% } %>
-</table>
 
-
-
-<p> this is my contracts page!!!!!</p>
-</section>
+			<p> this is my contracts page!!!!!</p>
+		</section>
 
 
 
 
 
-<section>
-<% include ./partials/footer %>
-</section>
-  </body>
+
+		<section>
+			<% include ./partials/footer %>
+		</section>
+</body>
+
 </html>
